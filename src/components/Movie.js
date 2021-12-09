@@ -70,6 +70,6 @@ const Movie = (props) => {
 
 const mapStateToProps = (state) => {
 	// The Movie component needs to access our list of movies to function. Map movies to props here as well.
-	return { movies: state.movies };
+	return { movies: state.movieReducer.movies }; //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
 };
 export default connect(mapStateToProps, { deleteMovie })(Movie); // We can delete movies within the Movie Component. Connect the deleteMovie action through the connect method.

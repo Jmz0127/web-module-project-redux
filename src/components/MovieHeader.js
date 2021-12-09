@@ -30,7 +30,7 @@ const MovieHeader = (props) => {
 const mapStateToProps = (state) => {
 	//Finally, MovieHeader uses appTitle to display the title text. Connect this component to appTitle and test appTitle is correctly displayed in your app.
 	return {
-		appTitle: state.appTitle
+		appTitle: state.movieReducer.appTitle //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
 	};
 };
 

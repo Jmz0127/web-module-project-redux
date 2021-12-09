@@ -34,7 +34,7 @@ const MovieList = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		movies: state.movies
+		movies: state.movieReducer.movies //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
 	};
 };
 
