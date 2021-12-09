@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
 			};
 			return {
 				...state,
-				movies: [...state.movies, newMovie]
+				movies: [...state.movies, newMovie] // Make this new case return a version of state with new movie values passed in through the payload.
 			};
 		default:
 			return state;
