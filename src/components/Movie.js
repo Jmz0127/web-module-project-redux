@@ -53,7 +53,7 @@ const Movie = (props) => {
 							</section>
 
 							<section>
-								<span className='m-2 btn btn-dark'>Favorite</span>
+								{displayFavorites && <span className='m-2 btn btn-dark'>Favorite</span>}
 								<span className='delete' onClick={handleDeleteClick}>
 									{' '}
 									{/*Find the HTML element that should trigger a deletion in the movie component. Create and connect the necessary event handlers to call deleteMovie on the current movie's id. After setting the state, redirect the user using the push('/movies') command. */}
