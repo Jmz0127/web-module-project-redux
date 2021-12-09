@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const MovieHeader = (props) => {
 	const { appTitle } = props;
-	const displayFavorites = true;
+	const { displayFavorites } = props;
 
 	return (
 		<div className='table-title'>
@@ -30,6 +30,7 @@ const MovieHeader = (props) => {
 const mapStateToProps = (state) => {
 	//Finally, MovieHeader uses appTitle to display the title text. Connect this component to appTitle and test appTitle is correctly displayed in your app.
 	return {
+		displayFavorites: state.favoritesReducer.displayFavorites, //Connect the displayFavorites state to the MovieHeader component.
 		appTitle: state.movieReducer.appTitle //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
 	};
 };

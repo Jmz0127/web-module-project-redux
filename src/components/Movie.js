@@ -7,7 +7,7 @@ const Movie = (props) => {
 	const { id } = useParams();
 	const { push } = useHistory();
 
-	const { movies, deleteMovie } = props;
+	const { movies, displayFavorites, deleteMovie } = props;
 	const movie = movies.find((movie) => movie.id === Number(id));
 	const handleDeleteClick = () => {
 		deleteMovie(movie.id);
@@ -70,6 +70,9 @@ const Movie = (props) => {
 
 const mapStateToProps = (state) => {
 	// The Movie component needs to access our list of movies to function. Map movies to props here as well.
-	return { movies: state.movieReducer.movies }; //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
+	return {
+		displayFavorites: state.favoritesReducer.displayFavorites, //Connect the displayFavorites state to the Movie component.
+		movies: state.movieReducer.movies
+	}; //Notice that your movie functions no longer work. Why? Make changes necessary to get the component connected to the movie reducer working again.
 };
 export default connect(mapStateToProps, { deleteMovie })(Movie); // We can delete movies within the Movie Component. Connect the deleteMovie action through the connect method.
